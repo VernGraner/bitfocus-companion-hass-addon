@@ -1,3 +1,7 @@
+## 0.4.2
+
+- Updated Bitfocus Companion to v5.0.2.
+
 ## 0.4.1
 
 - Normalize the startup script to Unix line endings during the image build.

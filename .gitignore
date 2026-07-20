@@ -1,0 +1,24 @@
+# Local secrets and runtime configuration
+.env
+.env.*
+!.env.example
+secrets.yaml
+options.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.companionconfig
+
+# Home Assistant and Companion runtime data
+.storage/
+config/
+data/
+addon_configs/
+backups/
+
+# Local tooling
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
