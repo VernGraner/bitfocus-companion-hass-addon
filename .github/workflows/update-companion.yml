@@ -1,0 +1,40 @@
+name: Update Companion
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-companion
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check for a stable Companion update
+        run: python3 scripts/update_companion.py
+
+      - name: Commit an available update
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No update available"
+            exit 0
+          fi
+
+          addon_version="$(sed -n 's/^version: "\([^"]*\)"/\1/p' bitfocus-companion/config.yaml)"
+          companion_version="$(sed -n 's/.*companion:\([0-9][0-9.]*\)-.*/\1/p' bitfocus-companion/Dockerfile | head -n 1)"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bitfocus-companion/Dockerfile bitfocus-companion/config.yaml bitfocus-companion/CHANGELOG.md
+          git commit -m "Update Companion to v${companion_version} (add-on ${addon_version})"
+          git push

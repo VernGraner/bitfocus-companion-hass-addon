@@ -1,5 +1,10 @@
 **Host Bitfocus Companion on your Pi/Odroid/HassOS as a Home Assistant Add-on**
 
+This fork tracks stable Bitfocus Companion releases automatically. A scheduled
+GitHub Actions workflow checks upstream every six hours, pins the verified
+`amd64` and `aarch64` container digests, and increments the Home Assistant
+add-on version so Home Assistant can offer the update.
+
 This setup allows you to run Companion directly within Home Assistant. It integrates smoothly with the Stream Deck Companion plugin and is likely compatible with Companion Satellite as well.
 
 **Installation Instructions:**

@@ -1,3 +1,7 @@
+## 0.4.0
+
+- Updated Bitfocus Companion to v5.0.1.
+
 ## 0.3.1
 Updated Companion docker image to v4.3.4
 
