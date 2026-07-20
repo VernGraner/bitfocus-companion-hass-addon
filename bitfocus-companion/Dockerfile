@@ -11,7 +11,7 @@ USER root
 
 # Kopieer het startup script
 COPY run.sh /run_companion.sh
-RUN chmod +x /run_companion.sh
+RUN sed -i 's/\r$//' /run_companion.sh && chmod +x /run_companion.sh
 
 # Verander het entrypoint
 ENTRYPOINT ["/run_companion.sh"]
