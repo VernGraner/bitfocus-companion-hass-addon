@@ -1,6 +1,6 @@
 name: "Bitfocus Companion"
 description: "Bitfocus Companion for Home Assistant"
-version: "0.4.2"
+version: "0.4.3"
 slug: "bitfocus_companion"
 init: false
 arch:
@@ -14,6 +14,8 @@ panel_icon: "mdi:remote"
 map:
   - type: addon_config
     read_only: false
+  - type: share
+    read_only: true
 ports:
   8000/tcp: 8000
   16622/tcp: 16622
