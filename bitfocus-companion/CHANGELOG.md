@@ -1,3 +1,7 @@
+## 0.4.4
+
+- Updated Bitfocus Companion to v5.0.3.
+
 ## 0.4.3
 
 - Mount the Home Assistant `share` directory read-only at `/share` so Companion modules can read shared files.
