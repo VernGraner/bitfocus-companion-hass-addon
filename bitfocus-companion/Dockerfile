@@ -1,8 +1,8 @@
 ARG BUILD_ARCH=aarch64
 
 # Selecteer de juiste image op basis van de architectuur linux/arm64=aarch64_image linux/amd64=amd64_image
-FROM ghcr.io/bitfocus/companion/companion:5.0.6-9750-stable-1acd2318f5@sha256:4628a7b3187add121395c5748c388e024e71861d85bc570d9a6c95b96ab47234 AS aarch64_image
-FROM ghcr.io/bitfocus/companion/companion:5.0.6-9750-stable-1acd2318f5@sha256:35c51b025ff0906d0b8ea8d861a35dbbef154df2e175f514e103540c14e17ca8 AS amd64_image
+FROM ghcr.io/bitfocus/companion/companion:5.0.7-9763-stable-cec2f88e6f@sha256:9f8019345ca1410180b7e5036bd5d96a5dfe74e9940820d50f4e83ba544fb0c8 AS aarch64_image
+FROM ghcr.io/bitfocus/companion/companion:5.0.7-9763-stable-cec2f88e6f@sha256:01721a4cdf58d569b5bc8f46aa7ea9f3e9802e29c0672cbcf67a78ea0e56f11f AS amd64_image
 
 # De eigenlijke image die wordt gebruikt
 FROM ${BUILD_ARCH}_image
