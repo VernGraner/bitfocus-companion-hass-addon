@@ -1,3 +1,7 @@
+## 0.4.12
+
+- Updated Bitfocus Companion to v5.1.3.
+
 ## 0.4.11
 
 - Updated Bitfocus Companion to v5.1.2.
